@@ -13,6 +13,8 @@
 <body>
     @yield('body')
     @livewireScripts
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

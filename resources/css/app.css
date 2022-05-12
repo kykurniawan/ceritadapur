@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .menu-enter {
+        @apply transition ease-out duration-300;
+    }
+    .menu-entering {
+        @apply opacity-0 -translate-y-4;
+    }
+    .menu-entered {
+        @apply opacity-100 -translate-y-0;
+    }
+    .menu-leave {
+        @apply transition ease-in duration-300;
+    }
+    .menu-leaving {
+        @apply opacity-100 -translate-y-0;
+    }
+    .menu-leaved {
+        @apply opacity-0 -translate-y-4;
+    }
+}
