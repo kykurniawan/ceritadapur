@@ -1,4 +1,4 @@
-<div class="sticky top-0" x-data="{ open: false }" x-on:resize.window="open=open&&window.innerWidth<768">
+<div x-cloak class="sticky top-0" x-data="{ open: false }" x-on:resize.window="open=open&&window.innerWidth<768">
     <nav class="bg-white shadow">
         <div class="px-4 mx-auto container sm:container-sm md:container-md lg:container-lg">
             <div class="flex justify-between items-center gap-4">
@@ -15,7 +15,7 @@
     </nav>
     <div x-show="open" x-transition:enter="menu-enter" x-transition:enter-start="menu-entering"
         x-transition:enter-end="menu-entered" x-transition:leave="menu-leave" x-transition:leave-start="menu-leaving"
-        x-transition:leave-end="menu-leaved" class="px-4 bg-white fixed left-0 right-0 bottom-0 top-0">
+        x-transition:leave-end="menu-leaved" class="fixed px-4 bg-white left-0 right-0 bottom-0 top-0">
         <div class="pt-4 flex gap-2 justify-between items-center">
             <h2 class="text-2xl text-orange-600 font-bold">Menu</h2>
             <button class="text-gray-600" x-on:click="open=false"><i data-feather="x-circle"></i></button>

@@ -8,6 +8,12 @@
     <title>Dapur Pribadi</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @livewireStyles
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+    </style>
 </head>
 
 <body>
