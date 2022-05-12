@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dapur Pribadi</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @livewireStyles
 </head>
 
 <body>
     @yield('body')
+    @livewireScripts
 </body>
 
 </html>

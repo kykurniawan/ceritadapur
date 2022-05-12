@@ -1,5 +1,5 @@
-@extends('layouts.base')
+@extends('layouts.main')
 
-@section('body')
+@section('page-content')
     <h1>Dapur Pribadi</h1>
 @endsection
