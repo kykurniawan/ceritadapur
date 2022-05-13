@@ -2,10 +2,10 @@
     <nav class="bg-white shadow">
         <div class="px-4 mx-auto container sm:container-sm md:container-md lg:container-lg">
             <div class="flex justify-between items-center gap-4">
-                <a href="" class="text-orange-400 text-2xl font-bold py-3">Cerita Dapur</a>
+                <a href="{{ route('home.index') }}" class="text-orange-400 text-2xl font-bold py-3">Cerita Dapur</a>
                 <button x-on:click="open=true" class="sm:hidden"><i data-feather="menu"></i></button>
                 <div class="hidden sm:flex gap-5 items-center">
-                    <a href="" class="text-orange-400 text-lg">Beranda</a>
+                    <a href="{{ route('home.index') }}" class="text-orange-400 text-lg">Beranda</a>
                     <a href="" class="text-gray-600 text-lg">Cari</a>
                     <a href="" class="text-gray-600 text-lg">Masuk</a>
                     <a href="" class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
@@ -22,7 +22,7 @@
         </div>
         <div class="mt-5">
             <div class="flex flex-col gap-2">
-                <a href="" class="text-orange-400 text-lg">Beranda</a>
+                <a href="{{ route('home.index') }}" class="text-orange-400 text-lg">Beranda</a>
                 <a href="" class="text-gray-600 text-lg">Cari</a>
                 <a href="" class="text-gray-600 text-lg">Masuk</a>
                 <a href="" class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
