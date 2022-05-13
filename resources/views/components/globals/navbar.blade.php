@@ -2,7 +2,7 @@
     <nav class="bg-white shadow">
         <div class="px-4 mx-auto container sm:container-sm md:container-md lg:container-lg">
             <div class="flex justify-between items-center gap-4">
-                <a href="" class="text-orange-400 text-2xl font-bold py-3">dapurpribadi</a>
+                <a href="" class="text-orange-400 text-2xl font-bold py-3">Cerita Dapur</a>
                 <button x-on:click="open=true" class="sm:hidden"><i data-feather="menu"></i></button>
                 <div class="hidden sm:flex gap-5 items-center">
                     <a href="" class="text-orange-400 text-lg">Beranda</a>
