@@ -21,4 +21,10 @@
     .menu-leaved {
         @apply opacity-0 -translate-y-4;
     }
+    .primary-button {
+        @apply bg-orange-400 px-5 py-2 text-white text-center font-semibold rounded-lg hover:bg-orange-500;
+    }
+    .secondary-button {
+        @apply bg-white px-5 py-2 text-gray-600 text-center font-semibold rounded-lg hover:bg-gray-50 border border-gray-300;
+    }
 }
