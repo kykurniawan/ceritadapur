@@ -1,4 +1,4 @@
-<div x-cloak class="sticky top-0" x-data="{ open: false }" x-on:resize.window="open=open&&window.innerWidth<768">
+<div x-cloak class="sticky top-0 z-50" x-data="{ open: false }" x-on:resize.window="open=open&&window.innerWidth<768">
     <nav class="bg-white shadow">
         <div class="px-4 mx-auto container sm:container-sm md:container-md lg:container-lg">
             <div class="flex justify-between items-center gap-4">
@@ -8,7 +8,8 @@
                     <a href="{{ route('home.index') }}" class="text-orange-400 text-lg">Beranda</a>
                     <a href="" class="text-gray-600 text-lg">Cari</a>
                     <a href="" class="text-gray-600 text-lg">Masuk</a>
-                    <a href="" class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
+                    <a href=""
+                        class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
                 </div>
             </div>
         </div>
