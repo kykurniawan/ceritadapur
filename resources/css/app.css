@@ -27,4 +27,13 @@
     .secondary-button {
         @apply bg-white px-5 py-2 text-gray-600 text-center font-semibold rounded-lg hover:bg-gray-50 border border-gray-300;
     }
+    .login-with-google-button {
+        @apply bg-red-500 px-5 py-2 text-white text-center font-semibold rounded-lg hover:bg-red-600;
+    }
+    .login-with-facebook-button {
+        @apply bg-blue-500 px-5 py-2 text-white text-center font-semibold rounded-lg hover:bg-blue-600;
+    }
+    .primary-link {
+        @apply text-orange-400 hover:text-orange-500;
+    }
 }

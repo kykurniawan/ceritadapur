@@ -7,8 +7,8 @@
                 <div class="hidden sm:flex gap-5 items-center">
                     <a href="{{ route('home.index') }}" class="text-orange-400 text-lg">Beranda</a>
                     <a href="" class="text-gray-600 text-lg">Cari</a>
-                    <a href="" class="text-gray-600 text-lg">Masuk</a>
-                    <a href=""
+                    <a href="{{ route('auth.signin') }}" class="text-gray-600 text-lg">Masuk</a>
+                    <a href="{{ route('auth.signup') }}"
                         class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
                 </div>
             </div>
@@ -25,8 +25,9 @@
             <div class="flex flex-col gap-2">
                 <a href="{{ route('home.index') }}" class="text-orange-400 text-lg">Beranda</a>
                 <a href="" class="text-gray-600 text-lg">Cari</a>
-                <a href="" class="text-gray-600 text-lg">Masuk</a>
-                <a href="" class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
+                <a href="{{ route('auth.signin') }}" class="text-gray-600 text-lg">Masuk</a>
+                <a href="{{ route('auth.signup') }}"
+                    class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
             </div>
         </div>
     </div>
