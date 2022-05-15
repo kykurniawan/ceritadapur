@@ -1,14 +1,15 @@
-<div x-cloak class="sticky top-0" x-data="{ open: false }" x-on:resize.window="open=open&&window.innerWidth<768">
+<div x-cloak class="sticky top-0 z-50" x-data="{ open: false }" x-on:resize.window="open=open&&window.innerWidth<768">
     <nav class="bg-white shadow">
         <div class="px-4 mx-auto container sm:container-sm md:container-md lg:container-lg">
             <div class="flex justify-between items-center gap-4">
-                <a href="" class="text-orange-400 text-2xl font-bold py-3">Cerita Dapur</a>
+                <a href="{{ route('home.index') }}" class="text-orange-400 text-2xl font-bold py-3">Cerita Dapur</a>
                 <button x-on:click="open=true" class="sm:hidden"><i data-feather="menu"></i></button>
                 <div class="hidden sm:flex gap-5 items-center">
-                    <a href="" class="text-orange-400 text-lg">Beranda</a>
+                    <a href="{{ route('home.index') }}" class="text-orange-400 text-lg">Beranda</a>
                     <a href="" class="text-gray-600 text-lg">Cari</a>
-                    <a href="" class="text-gray-600 text-lg">Masuk</a>
-                    <a href="" class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
+                    <a href="{{ route('auth.signin') }}" class="text-gray-600 text-lg">Masuk</a>
+                    <a href="{{ route('auth.signup') }}"
+                        class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
                 </div>
             </div>
         </div>
@@ -22,10 +23,11 @@
         </div>
         <div class="mt-5">
             <div class="flex flex-col gap-2">
-                <a href="" class="text-orange-400 text-lg">Beranda</a>
+                <a href="{{ route('home.index') }}" class="text-orange-400 text-lg">Beranda</a>
                 <a href="" class="text-gray-600 text-lg">Cari</a>
-                <a href="" class="text-gray-600 text-lg">Masuk</a>
-                <a href="" class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
+                <a href="{{ route('auth.signin') }}" class="text-gray-600 text-lg">Masuk</a>
+                <a href="{{ route('auth.signup') }}"
+                    class="rounded-lg px-3 py-1 border border-orange-400 text-orange-400 text-center">Daftar</a>
             </div>
         </div>
     </div>

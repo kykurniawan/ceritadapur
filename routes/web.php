@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\SigninController;
+use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+
+Route::get('/signin', SigninController::class)->name('auth.signin');
+Route::get('/signup', SignupController::class)->name('auth.signup');
