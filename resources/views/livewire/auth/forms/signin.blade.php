@@ -1,23 +1,33 @@
 <div>
     <div class="p-5 bg-white rounded-lg border shadow mb-5">
+        @if (session()->has('signin.message'))
+            <x-globals.alert dismissable class="bg-red-200 text-red-800 mb-3 rounded-lg">
+                {{ session('signin.message') }}
+            </x-globals.alert>
+        @endif
+        <div wire:loading.delay wire:target="submit">
+            <x-globals.alert class="bg-white border rounded-lg text-gray-600 mb-3">
+                <x-globals.spinner class="w-5 h-5 text-gray-200 fill-blue-600 inline" /> Memeriksa kredensial...
+            </x-globals.alert>
+        </div>
         <form wire:submit.prevent="submit">
             @csrf
             <div class="mb-3">
                 <input type="email" wire:model="email" id="signin.email" class="form-input block w-full rounded-lg"
                     placeholder="Alamat Email...">
                 @error('email')
-                    <span class="text-red-500">{{ $message }}</span>
+                    <small class="text-red-500">{{ $message }}</small>
                 @enderror
             </div>
             <div class="mb-3">
                 <input type="password" wire:model="password" id="signin.password"
                     class="form-input block w-full rounded-lg" placeholder="Kata Sandi...">
                 @error('password')
-                    <span class="text-red-500">{{ $message }}</span>
+                    <small class="text-red-500">{{ $message }}</small>
                 @enderror
             </div>
             <div class="mb-3">
-                <button type="submit" class="primary-button w-full">Masuk</button>
+                <button wire:loading.attr="disabled" type="submit" class="primary-button w-full">Masuk</button>
             </div>
         </form>
         <div class="mb-3 text-center">

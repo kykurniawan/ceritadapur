@@ -21,8 +21,14 @@ class Signin extends Component
 
     public function submit()
     {
-        $this->validate();
-        $this->reset();
+        $validatedData = $this->validate();
+        $this->reset('password');
+
+        if ($validatedData['email'] != 'admin@gmail.com' && $validatedData['password'] != 'password') {
+            session()->flash('signin.message', 'Email atau kata sandi yang kamu masukkan salah.');
+        } else {
+            return redirect()->route('home.index');
+        }
     }
 
     public function render()
