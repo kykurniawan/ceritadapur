@@ -1,21 +1,48 @@
 <div>
     <div class="p-5 bg-white rounded-lg border shadow mb-5">
-        <div class="mb-3">
-            <input type="text" name="" id="" class="form-input block w-full rounded-lg" placeholder="Nama Kamu...">
-        </div>
-        <div class="mb-3">
-            <input type="email" name="" id="" class="form-input block w-full rounded-lg" placeholder="Alamat Email...">
-        </div>
-        <div class="mb-3">
-            <input type="password" name="" id="" class="form-input block w-full rounded-lg" placeholder="Kata Sandi...">
-        </div>
-        <div class="mb-3">
-            <input type="password" name="" id="" class="form-input block w-full rounded-lg"
-                placeholder="Ulangi Kata Sandi...">
-        </div>
-        <div class="mb-3">
-            <button class="primary-button w-full">Buat Akun</button>
-        </div>
+        @if (session()->has('signup.message'))
+            <x-globals.alert dismissable class="bg-red-200 text-red-800 mb-3 rounded-lg">
+                {{ session('signup.message') }}
+            </x-globals.alert>
+        @endif
+        <form wire:submit.prevent="submit">
+            <div class="mb-3">
+                <input wire:model="name" type="text" id="signup.name" class="form-input block w-full rounded-lg"
+                    placeholder="Nama Kamu...">
+                @error('name')
+                    <small class="text-red-500">{{ $message }}</small>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <input wire:model="email" type="email" id="signup.email" class="form-input block w-full rounded-lg"
+                    placeholder="Alamat Email...">
+                @error('email')
+                    <small class="text-red-500">{{ $message }}</small>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <input wire:model="password" type="password" id="signup.password"
+                    class="form-input block w-full rounded-lg" placeholder="Kata Sandi...">
+                @error('password')
+                    <small class="text-red-500">{{ $message }}</small>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <input wire:model="password_confirmation" type="password" id="signup.password_confirmation"
+                    class="form-input block w-full rounded-lg" placeholder="Ulangi Kata Sandi...">
+                @error('password_confirmation')
+                    <small class="text-red-500">{{ $message }}</small>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <button wire:loading.attr="disabled" wire:target="submit" type="submit" class="primary-button w-full">
+                    <span wire:loading.delay.remove wire:target="submit">Buat Akun</span>
+                    <span wire:loading.delay wire:target="submit">
+                        <x-globals.spinner class="w-4 h-4 text-gray fill-blue-600 inline" /> Memproses
+                    </span>
+                </button>
+            </div>
+        </form>
         <div class="mb-3 text-center">
             <p class="text-gray-500 font-semibold">Atau gunakan metode lain</p>
         </div>

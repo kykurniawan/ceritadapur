@@ -21,6 +21,7 @@ class Signin extends Component
 
     public function submit()
     {
+        sleep(5);
         $validatedData = $this->validate();
         $this->reset('password');
 

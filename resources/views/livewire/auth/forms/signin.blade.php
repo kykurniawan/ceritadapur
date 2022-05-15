@@ -5,13 +5,7 @@
                 {{ session('signin.message') }}
             </x-globals.alert>
         @endif
-        <div wire:loading.delay wire:target="submit">
-            <x-globals.alert class="bg-white border rounded-lg text-gray-600 mb-3">
-                <x-globals.spinner class="w-5 h-5 text-gray-200 fill-blue-600 inline" /> Memeriksa kredensial...
-            </x-globals.alert>
-        </div>
         <form wire:submit.prevent="submit">
-            @csrf
             <div class="mb-3">
                 <input type="email" wire:model="email" id="signin.email" class="form-input block w-full rounded-lg"
                     placeholder="Alamat Email...">
@@ -27,7 +21,12 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <button wire:loading.attr="disabled" type="submit" class="primary-button w-full">Masuk</button>
+                <button wire:loading.attr="disabled" wire:target="submit" type="submit" class="primary-button w-full">
+                    <span wire:loading.delay.remove wire:target="submit">Masuk</span>
+                    <span wire:loading.delay wire:target="submit">
+                        <x-globals.spinner class="w-4 h-4 text-gray fill-blue-600 inline" /> Memproses
+                    </span>
+                </button>
             </div>
         </form>
         <div class="mb-3 text-center">
