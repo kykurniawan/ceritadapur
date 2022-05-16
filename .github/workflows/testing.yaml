@@ -1,0 +1,48 @@
+name: Testing
+
+on:
+  push:
+    branches:
+      - development
+      - main
+  pull_request:
+    branches:
+      - development
+      - main
+
+jobs:
+  application-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Copy Environment Variable
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+      - name: Installing Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress
+
+      - name: Generating application key
+        run: php artisan key:generate
+
+      - name: Adjusting directory permission
+        run: chmod -R 777 storage bootstrap/cache
+
+      - name: Creating Database
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
+
+      - name: Compiling assets
+        run: |
+          npm install
+          npm run production
+
+      - name: Executing tests (Unit and Feature tests) via PHPUnit
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+          CACHE_DRIVER: array
+          SESSION_DRIVER: array
+          QUEUE_DRIVER: sync
+        run: vendor/bin/phpunit
